@@ -1,23 +1,14 @@
 import "./App.css";
+import ProjectCard from "./ProjectCard";
+
 function App() {
   return (
     <div>
       <h1>My Portfolio</h1>
 
-      <div className="card">
-        <h3>Project One</h3>
-        <p>Description of project one</p>
-      </div>
-
-      <div className="card">
-        <h3>Project Two</h3>
-        <p>Description of project two</p>
-      </div>
-
-      <div className="card">
-        <h3>Project Three</h3>
-        <p>Description of project three</p>
-      </div>
+      <ProjectCard title="Project One" description="Description of project one" />
+      <ProjectCard title="Project Two" description="Description of project two" />
+      <ProjectCard title="Project Three" description="Description of project three" />
     </div>
   );
 }
