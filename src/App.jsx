@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import ProjectCard from "./ProjectCard";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    document.title = "Charuka's Portfolio";
+  }, []);
+
+  useEffect(() => {
+    console.log("Theme changed. Dark mode is:", isDark);
+  }, [isDark]);
 
   return (
     <div
