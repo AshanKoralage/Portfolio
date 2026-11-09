@@ -3,6 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./Home";
 import About from "./About";
+import project from "./project"
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -24,7 +25,7 @@ function App() {
       }}
     >
       <nav>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/project">Project</Link>
       </nav>
 
       <button onClick={() => setIsDark(!isDark)}>
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/project" element={<project />} />
       </Routes>
     </div>
   );
