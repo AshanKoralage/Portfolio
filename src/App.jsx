@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import ProjectCard from "./ProjectCard";
+import Home from "./Home";
+import About from "./About";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -21,15 +23,18 @@ function App() {
         minHeight: "100vh",
       }}
     >
-      <h1>My Portfolio</h1>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+      </nav>
 
       <button onClick={() => setIsDark(!isDark)}>
         {isDark ? "Light Mode" : "Dark Mode"}
       </button>
 
-      <ProjectCard title="Project One" description="Description of project one" tech="React" />
-      <ProjectCard title="Project Two" description="Description of project two" tech="Node.js" />
-      <ProjectCard title="Project Three" description="Description of project three" tech="MySQL" />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }
